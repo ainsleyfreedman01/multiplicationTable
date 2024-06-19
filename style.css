@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans+Condensed:wght@200..900&display=swap');
+
+.table-item,
+.answer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    transition: transform 0.5s;
+    font-weight: 550;
+    font-family: 'Inter';
+    user-select: none;
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer */
+    -webkit-user-select: none;/* Chrome, Safari, Opera */
+
+}
+
+.answer {
+    transform: rotateY(180deg);
+}
+
+table {
+    border-collapse: collapse;
+    background-color: white;
+    padding: 0;
+    border: 3px solid black;
+    aspect-ratio: 1;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    perspective: 1000px;
+}
+
+
+.instructions {
+    font-family: 'Reddit Sans Condensed';
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+h1 {
+    font-family: 'Poetsen One';
+    text-align: center;
+    font-size: 40px;
+}
+
+h2 {
+    margin-bottom: 5px;
+    ;
+}
+
+body {
+    align-items: center;
+}
+
+.red {
+    color: red;
+}
+
+.yellow {
+    color: #FFC300;
+}
+
+.green {
+    color: green;
+}
+
+
+td {
+    background-color: white;
+    padding: 5000px;
+    text-align: center;
+    border: 1px solid black;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.7s;
+    perspective: 1000px;
+    padding: 35px;
+    width: 150px;
+    height: 0;
+
+}
+
+td.hoverable:hover {
+    transform: rotateY(180deg);
+    cursor: default;
+}
+
+td.hoverable {
+    transition: transform 0.7s;
+}
+
+
+button {
+    margin-left: 10px;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 8px;
+    width: auto;
+    height: 29px;
+}
+
+.clearButton {
+    position: relative;
+    top: -29px;
+    left: 150px;
+    margin-bottom: -29px;
+}
+
+.disable-hover tbody td:hover {
+    background-color: inherit;
+}
+
+.progress-container {
+    width: 400px;
+    height: 30px;
+    background-color: #e7dfdf;
+    margin-left: 10px;
+    box-shadow: inset 0px 5px 5px rgba(0, 0, 0, 0.3);
+
+}
+
+#progressGreen {
+    width: 0px;
+    height: 30px;
+    background-color: #4CAF50;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    position: absolute;
+    top: 50;
+    left: 10;
+    transition: width 0.1s;
+}
+
+#progressYellow {
+    width: 0px;
+    height: 30px;
+    background-color: #FFC300;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    position: absolute;
+    top: 50;
+    left: 10;
+    margin-left: 0px;
+    transition: width 0.1s;
+}
+
+#progressRed {
+    width: 0px;
+    height: 30px;
+    background-color: red;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    position: absolute;
+    top: 50;
+    left: 10;
+    margin-left: 0px;
+    transition: width 0.1s;
+}
+
+#progressMessage {
+    margin-bottom: -10px;
+    font-size: medium;
+
+}
+
+#percentage {
+    font-family: 'Inter';
+    font-size: 15px;
+    font-weight: 600;
+    padding-left: 406px;
+    padding-top: 5px;
+}
+
+#finished {
+    font-family: 'Inter';
+    font-size: 18px;
+    font-weight: 700;
+    position: relative;
+    z-index: 1000;
+    bottom:38px;
+    left: 474px;
+    white-space: nowrap;
+    color: green;
+    text-decoration: underline;
+}
