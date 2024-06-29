@@ -18,8 +18,8 @@
         <h1>Let's Learn Multiplication!</h1>
         <div class="instructions">
             <h2><u>Instructions:</u></h2>
-            Hover your mouse over the center of the tile to reveal the answer. Click the tile
-            to change the color based on how well you know it.
+            <p class="clicking">Click the tile to reveal the answer.</p>
+            <p class="clicking">Click the tile to change the color based on how well you know it.</p>
             <br>
             <div class="colors">
                 <p class="red"><u><b>Red:</b></u> I don't know this.</p>
@@ -27,11 +27,13 @@
                 <p class="green"><u><b>Green:</b></u> I know this!</p>
             </div>
         </div>
-        <div class="toggleButton">
-            <button onclick="toggleHoverAnimation()" id="myButton">Change Color: On</button>
-        </div>
-        <div class="clearButton">
-            <button onclick="clearAll()">Clear All</button>
+        <div class="button-container">
+            <div class="toggleButton">
+                <button onclick="toggleFlipAnimation()" id="myButton">Change Color: On</button>
+            </div>
+            <div class="clearButton">
+                <button onclick="clearAll()">Clear All</button>
+            </div>
         </div>
         <p class="instructions" id="progressMessage"><b><u>Progress:</u></b></p>
         <div class="progress-container">
@@ -43,421 +45,421 @@
         </div>
         <table class="table-container" id="myTable">
             <tr>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">1x1</div>
                     <div class="answer">1</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">1x2</div>
                     <div class="answer">2</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">1x3</div>
                     <div class="answer">3</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">1x4</div>
                     <div class="answer">4</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">1x5</div>
                     <div class="answer">5</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">1x6</div>
                     <div class="answer">6</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">1x7</div>
                     <div class="answer">7</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">1x8</div>
                     <div class="answer">8</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">1x9</div>
                     <div class="answer">9</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">1x10</div>
                     <div class="answer">10</div>
                 </td>
             </tr>
             <tr>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">2x1</div>
                     <div class="answer">2</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">2x2</div>
                     <div class="answer">4</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">2x3</div>
                     <div class="answer">6</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">2x4</div>
                     <div class="answer">8</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">2x5</div>
                     <div class="answer">10</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">2x6</div>
                     <div class="answer">12</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">2x7</div>
                     <div class="answer">14</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">2x8</div>
                     <div class="answer">16</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">2x9</div>
                     <div class="answer">18</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">2x10</div>
                     <div class="answer">20</div>
                 </td>
             </tr>
             <tr>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">3x1</div>
                     <div class="answer">3</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">3x2</div>
                     <div class="answer">6</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">3x3</div>
                     <div class="answer">9</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">3x4</div>
                     <div class="answer">12</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">3x5</div>
                     <div class="answer">15</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">3x6</div>
                     <div class="answer">18</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">3x7</div>
                     <div class="answer">21</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">3x8</div>
                     <div class="answer">24</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">3x9</div>
                     <div class="answer">27</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">3x10</div>
                     <div class="answer">30</div>
                 </td>
             </tr>
             <tr>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">4x1</div>
                     <div class="answer">4</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">4x2</div>
                     <div class="answer">8</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">4x3</div>
                     <div class="answer">12</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">4x4</div>
                     <div class="answer">16</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">4x5</div>
                     <div class="answer">20</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">4x6</div>
                     <div class="answer">24</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">4x7</div>
                     <div class="answer">28</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">4x8</div>
                     <div class="answer">32</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">4x9</div>
                     <div class="answer">36</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">4x10</div>
                     <div class="answer">40</div>
                 </td>
             </tr>
             <tr>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">5x1</div>
                     <div class="answer">5</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">5x2</div>
                     <div class="answer">10</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">5x3</div>
                     <div class="answer">15</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">5x4</div>
                     <div class="answer">20</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">5x5</div>
                     <div class="answer">25</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">5x6</div>
                     <div class="answer">30</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">5x7</div>
                     <div class="answer">35</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">5x8</div>
                     <div class="answer">40</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">5x9</div>
                     <div class="answer">45</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">5x10</div>
                     <div class="answer">50</div>
                 </td>
             </tr>
             <tr>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">6x1</div>
                     <div class="answer">6</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">6x2</div>
                     <div class="answer">12</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">6x3</div>
                     <div class="answer">18</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">6x4</div>
                     <div class="answer">24</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">6x5</div>
                     <div class="answer">30</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">6x6</div>
                     <div class="answer">36</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">6x7</div>
                     <div class="answer">42</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">6x8</div>
                     <div class="answer">48</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">6x9</div>
                     <div class="answer">54</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">6x10</div>
                     <div class="answer">60</div>
                 </td>
             </tr>
             <tr>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">7x1</div>
                     <div class="answer">7</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">7x2</div>
                     <div class="answer">14</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">7x3</div>
                     <div class="answer">21</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">7x4</div>
                     <div class="answer">28</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">7x5</div>
                     <div class="answer">35</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">7x6</div>
                     <div class="answer">42</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">7x7</div>
                     <div class="answer">49</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">7x8</div>
                     <div class="answer">56</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">7x9</div>
                     <div class="answer">63</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">7x10</div>
                     <div class="answer">70</div>
                 </td>
             </tr>
             <tr>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">8x1</div>
                     <div class="answer">8</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">8x2</div>
                     <div class="answer">16</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">8x3</div>
                     <div class="answer">24</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">8x4</div>
                     <div class="answer">32</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">8x5</div>
                     <div class="answer">40</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">8x6</div>
                     <div class="answer">48</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">8x7</div>
                     <div class="answer">56</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">8x8</div>
                     <div class="answer">64</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">8x9</div>
                     <div class="answer">72</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">8x10</div>
                     <div class="answer">80</div>
                 </td>
             </tr>
             <tr>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">9x1</div>
                     <div class="answer">9</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">9x2</div>
                     <div class="answer">18</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">9x3</div>
                     <div class="answer">27</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">9x4</div>
                     <div class="answer">36</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">9x5</div>
                     <div class="answer">45</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">9x6</div>
                     <div class="answer">54</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">9x7</div>
                     <div class="answer">63</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">9x8</div>
                     <div class="answer">72</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">9x9</div>
                     <div class="answer">81</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">9x10</div>
                     <div class="answer">90</div>
                 </td>
             </tr>
             <tr>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">10x1</div>
                     <div class="answer">10</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">10x2</div>
                     <div class="answer">20</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">10x3</div>
                     <div class="answer">30</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">10x4</div>
                     <div class="answer">40</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">10x5</div>
                     <div class="answer">50</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">10x6</div>
                     <div class="answer">60</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">10x7</div>
                     <div class="answer">70</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">10x8</div>
                     <div class="answer">80</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">10x9</div>
                     <div class="answer">90</div>
                 </td>
-                <td onclick="changeCellColor(this)">
+                <td>
                     <div class="table-item">10x10</div>
                     <div class="answer">100</div>
                 </td>

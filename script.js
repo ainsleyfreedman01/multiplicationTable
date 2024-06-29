@@ -1,11 +1,20 @@
-var hoverAnimationEnabled = false;
+var flipAnimationEnabled = false;
 var button = document.getElementById("myButton");
+var tiles = document.querySelectorAll('td'); // Changed to tiles for NodeList
+
+// Iterate over each td element to add event listeners
+tiles.forEach(tile => {
+    tile.addEventListener('click', function() {
+        decideClickBehavior(this); // Pass the clicked element as parameter
+    });
+});
 
 function changeCellColor(cell) {
     const progressRed = document.getElementById('progressRed');
     const progressYellow = document.getElementById('progressYellow');
     const progressGreen = document.getElementById('progressGreen');
 
+    // Initialize progress bars if not already set
     if (!progressRed.style.width) {
         progressRed.style.width = '0px';
     }
@@ -16,7 +25,7 @@ function changeCellColor(cell) {
         progressGreen.style.width = '0px';
     }
 
-    if (!hoverAnimationEnabled) {
+    if (!flipAnimationEnabled) {
         var currentColor = getComputedStyle(cell).backgroundColor;
         switch (currentColor) {
             case "rgb(255, 255, 255)": // White in RGB format
@@ -41,94 +50,61 @@ function changeCellColor(cell) {
                 cell.style.backgroundColor = "white";
                 break;
         }
+
+        // Adjust progress bar margins based on widths
         progressRed.style.marginLeft = parseFloat(progressYellow.style.width) + parseFloat(progressGreen.style.width) + 'px';
         progressYellow.style.marginLeft = parseFloat(progressGreen.style.width) + 'px';
 
+        // Calculate and update percentage
         const percent = document.getElementById('percentage');
-        const percentText = parseFloat(parseFloat(progressRed.style.width)/3.0 + (parseFloat(progressYellow.style.width))/1.5 + (parseFloat(progressGreen.style.width)))/4.0;
+        const percentText = parseFloat(parseFloat(progressRed.style.width) / 3.0 + (parseFloat(progressYellow.style.width)) / 1.5 + (parseFloat(progressGreen.style.width))) / 4.0;
         percent.textContent = percentText.toFixed(2) + '%';
 
+        // Update 'finished' message based on progress
         const finished = document.getElementById('finished');
-        if(progressGreen.style.width === '400px') {
+        if (progressGreen.style.width === '400px') {
             finished.textContent = 'You did it!';
             finished.style.color = 'green';
-            finished.style.left = '474px';
         } else {
             finished.textContent = 'Keep Going!';
             finished.style.color = 'purple';
-            finished.style.left = '465px';
         }
     }
 
-    saveColors(); //TODO: write this method!
+    saveColors(); // Save current state to local storage
 }
 
-function saveColors() {
-    const tableCells = document.querySelectorAll("td");
-    const cellColors = Array.from(tableCells).map(cell=>cell.style.backgroundColor);
-    const percent = document.getElementById('percentage');
-    localStorage.setItem('percent', JSON.stringify(percent.textContent));
-    localStorage.setItem('cellColors', JSON.stringify(cellColors));
-
-    const progressRedWidth = parseFloat(document.getElementById('progressRed').style.width);
-    const progressYellowWidth = parseFloat(document.getElementById('progressYellow').style.width);
-    const progressGreenWidth = parseFloat(document.getElementById('progressGreen').style.width);
-
-    const progressRedLeft = parseFloat(document.getElementById('progressRed').style.marginLeft);
-    const progressYellowLeft = parseFloat(document.getElementById('progressYellow').style.marginLeft);
-    
-    // Save the cell colors and progress bar widths
-    const dataToSave = {
-        cellColors: cellColors,
-        progressRedWidth: progressRedWidth,
-        progressYellowWidth: progressYellowWidth,
-        progressGreenWidth: progressGreenWidth,
-        progressRedLeft: progressRedLeft,
-        progressYellowLeft: progressYellowLeft
-    };
-
-    localStorage.setItem('savedData', JSON.stringify(dataToSave));
-}
-
-
-function loadColors() {
-    const cellColors = JSON.parse(localStorage.getItem('cellColors'));
-    const percent = JSON.parse(localStorage.getItem('percent'));
-    const savedData = JSON.parse(localStorage.getItem('savedData'))
-    document.getElementById('percentage').textContent = percent;
-    if (cellColors) {
-        const tableCells = document.querySelectorAll("td");
-        tableCells.forEach((cell, index) => {
-            cell.style.backgroundColor = cellColors[index];
-        });
-    }
-    if(savedData) {
-        const savedData = JSON.parse(localStorage.getItem('savedData'));
-        document.getElementById('progressRed').style.width = parseFloat(savedData.progressRedWidth) + 'px';
-        document.getElementById('progressYellow').style.width = parseFloat(savedData.progressYellowWidth) + 'px';
-        document.getElementById('progressGreen').style.width = parseFloat(savedData.progressGreenWidth) + 'px';
-
-        document.getElementById('progressRed').style.marginLeft = parseFloat(savedData.progressRedLeft) + 'px';
-        document.getElementById('progressYellow').style.marginLeft = parseFloat(savedData.progressYellowLeft) + 'px';
+function decideClickBehavior(cell) {
+    if (!flipAnimationEnabled) {
+        changeCellColor(cell);
+    } else {
+        if (cell.classList.contains('flipped')) {
+            // Flip back
+            cell.style.transition = 'transform 0.7s';
+            cell.style.transform = 'none';
+            cell.classList.remove('flipped');
+        } else {
+            // Flip
+            flipAnimation(cell);
+        }
     }
 }
 
-window.onload = loadColors;
+function flipAnimation(cell) {
+    cell.style.transition = 'transform 0.7s';
+    cell.style.transform = 'rotateY(180deg)';
+    cell.classList.add('flipped');
+    cell.style.cursor = 'default';
+}
 
-function toggleHoverAnimation() {
-    hoverAnimationEnabled = !hoverAnimationEnabled;
-    if (hoverAnimationEnabled) {
+function toggleFlipAnimation() {
+    flipAnimationEnabled = !flipAnimationEnabled;
+    if (flipAnimationEnabled) {
         button.textContent = "Change Color: Off";
         // Add 'hoverable' class to enable hover animation
-        document.querySelectorAll("td").forEach(function (td) {
-            td.classList.add("hoverable");
-        });
     } else {
         button.textContent = "Change Color: On";
         // Remove 'hoverable' class to disable hover animation
-        document.querySelectorAll("td").forEach(function (td) {
-            td.classList.remove("hoverable");
-        });
     }
 }
 
@@ -152,5 +128,57 @@ function clearAll() {
     const finished = document.getElementById('finished');
     finished.textContent = '';
     
-    saveColors();
+    saveColors(); // Save cleared state to local storage
 }
+
+function saveColors() {
+    const tableCells = document.querySelectorAll("td");
+    const cellColors = Array.from(tableCells).map(cell => cell.style.backgroundColor);
+    const percent = document.getElementById('percentage').textContent;
+
+    const progressRedWidth = parseFloat(document.getElementById('progressRed').style.width);
+    const progressYellowWidth = parseFloat(document.getElementById('progressYellow').style.width);
+    const progressGreenWidth = parseFloat(document.getElementById('progressGreen').style.width);
+
+    const progressRedLeft = parseFloat(document.getElementById('progressRed').style.marginLeft);
+    const progressYellowLeft = parseFloat(document.getElementById('progressYellow').style.marginLeft);
+    
+    // Save the cell colors and progress bar widths
+    const dataToSave = {
+        cellColors: cellColors,
+        percent: percent,
+        progressRedWidth: progressRedWidth,
+        progressYellowWidth: progressYellowWidth,
+        progressGreenWidth: progressGreenWidth,
+        progressRedLeft: progressRedLeft,
+        progressYellowLeft: progressYellowLeft
+    };
+
+    localStorage.setItem('savedData', JSON.stringify(dataToSave));
+}
+
+function loadColors() {
+    const savedData = JSON.parse(localStorage.getItem('savedData'));
+    if (savedData) {
+        const cellColors = savedData.cellColors;
+        const percent = savedData.percent;
+
+        document.getElementById('percentage').textContent = percent;
+
+        // Set cell colors from saved data
+        const tableCells = document.querySelectorAll("td");
+        tableCells.forEach((cell, index) => {
+            cell.style.backgroundColor = cellColors[index];
+        });
+
+        // Set progress bar widths and margins from saved data
+        document.getElementById('progressRed').style.width = savedData.progressRedWidth + 'px';
+        document.getElementById('progressYellow').style.width = savedData.progressYellowWidth + 'px';
+        document.getElementById('progressGreen').style.width = savedData.progressGreenWidth + 'px';
+
+        document.getElementById('progressRed').style.marginLeft = savedData.progressRedLeft + 'px';
+        document.getElementById('progressYellow').style.marginLeft = savedData.progressYellowLeft + 'px';
+    }
+}
+
+window.onload = loadColors; // Load saved colors on page load
