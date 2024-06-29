@@ -264,11 +264,11 @@ button {
     }
 
     #progressMessage {
-        margin-left: 10%;
+        margin-left: 8%;
     }
 
     .progress-container {
-        margin-left: 10%;
+        margin-left: 8%;
     }
 
     table {
@@ -350,7 +350,7 @@ button {
 
     #finished {
         top: -39px;
-        left: -7px;
+        left: 463px;
     }
 
     .progress-container {
