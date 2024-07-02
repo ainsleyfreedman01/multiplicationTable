@@ -52,8 +52,13 @@ table {
     margin-left: 10px;
 }
 
-.clicking {
-    margin-bottom: -25px;
+.clicking.reveal {
+    margin-bottom: -10px;
+    margin-top: 5px;
+}
+
+.clicking.changeColor {
+    margin-bottom: -10px;
 }
 
 h1 {
