@@ -13,7 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 22px;
+    font-size: 2vw;
     transition: transform 0.5s;
     font-weight: 550;
     font-family: 'Inter';
@@ -25,6 +25,11 @@
     -webkit-user-select: none;
     /* Chrome, Safari, Opera */
 
+}
+
+.aboveTable {
+    margin-bottom: -20px;
+    margin-left: 25px;
 }
 
 .answer {
@@ -48,23 +53,28 @@ table {
 
 .instructions {
     font-family: 'Reddit Sans Condensed';
-    font-size: 1.6vw;
+    font-size: 35px;
     margin-left: 10px;
 }
 
 .clicking {
     margin-bottom: -25px;
+    font-size: 35px;
+}
+
+.clicking.reveal {
+    margin-top: 0px;
+    margin-bottom: -16px;
 }
 
 h1 {
     font-family: 'Poetsen One';
     text-align: center;
-    font-size: 40px;
+    font-size: 70px;
 }
 
 h2 {
     margin-bottom: 5px;
-    ;
 }
 
 body {
@@ -73,18 +83,18 @@ body {
 
 .red {
     color: red;
-    font-size: 1.6vw;
+    font-size: 35px;
     top: 10px;
 }
 
 .yellow {
     color: #FFC300;
-    font-size: 1.6vw;
+    font-size: 35px;
 }
 
 .green {
     color: green;
-    font-size: 1.6vw;
+    font-size: 35px;
 }
 
 
@@ -100,7 +110,6 @@ td {
     padding: 35px;
     width: 150px;
     height: 0;
-
 }
 
 td.hoverable:hover {
@@ -117,20 +126,11 @@ button {
     margin-left: 10px;
     font-family: 'Inter';
     font-weight: 600;
-    font-size: 15px;
+    font-size: 20px;
     border-radius: 8px;
     width: auto;
     height: 29px;
-}
-
-.clearButton {
-    position: relative;
-    left: -100px;
-    top: 50px;
-}
-
-.toggleButton {
-    padding-left: 5px;
+    padding: 5px 5px 30px 5px;
 }
 
 .button-container {
@@ -146,7 +146,7 @@ button {
     width: 400px;
     height: 30px;
     background-color: #e7dfdf;
-    margin-left: 10px;
+    margin-left: 40px;
     box-shadow: inset 0px 5px 5px rgba(0, 0, 0, 0.3);
 
 }
@@ -194,13 +194,14 @@ button {
 
 #progressMessage {
     margin-bottom: -10px;
-    font-size: 20px;
+    font-size: 25px;
+    margin-left: 40px;
 
 }
 
 #percentage {
     font-family: 'Inter';
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 600;
     padding-left: 406px;
     padding-top: 5px;
@@ -219,312 +220,149 @@ button {
     text-decoration: underline;
 }
 
-@media screen and (min-width: 320px) and (max-width: 480px) { /*portrait on phones*/
-    h1 {
-        padding: 0;
-        white-space: nowrap;
-        width: 100%;
-        margin-left: 15%;
-
+@media (min-width: 481px) and (max-width: 767px) { /*phones in landscape*/
+    .aboveTable, .progress-container, #progressMessage {
+        margin-left: 5px;
     }
 
-    .toggleButton {
-        margin-left: 7.4%;
-    }
-
-
-    .clearButton {
-        position: relative;
-        top: -29px;
-        margin-bottom: -29px;
-        margin-left: 54%;
-    }
-
-    button {
-        font-size: 18px;
-        font-weight: 650;
-    }
-
-    .clearButton {
-        position: relative;
-        left: 28px;
-    }
-
-    .button-container {
-        margin-left: -13px;
-        display: flex;
-    }
-
-    .instructions {
-        font-family: 'Reddit Sans Condensed';
+    .table-item, .answer {
         font-size: 20px;
-        margin-left: 20%;
-        white-space: nowrap;
     }
 
-    .instructions h2 {
-        margin-bottom: -15px;
-        margin-left: -15%;
+    h1 {
+        margin-left: 30px;
     }
+  }
 
-    .instructions p.clicking {
-        margin-bottom: -10px;
-        margin-left: -15%;
-    }
-
-    #progressMessage {
-        margin-left: 8%;
-    }
-
-    .progress-container {
-        margin-left: 8%;
-    }
-
+  @media (min-width: 320px) and (max-width: 480px) { /*phones in portrait*/
     table {
-        margin-left: -10px;
-        margin-bottom: 150px;
-        margin-top: 30px;
-        border-left: 5px black solid;
+        margin-left: -6.7px;
     }
 
-    .red, .yellow, .green {
-        font-size: 26px;
-        margin-left: -15%;
-        margin-top: auto;
-    }
-
-}
-
-@media (min-width: 481px) and (max-width: 767px) { /*landscape on phones*/
     h1 {
-        padding: 0;
-        white-space: nowrap;
-        width: 100%;
-        margin-left: 10%;
+        margin-left: 90px;
+        text-wrap: nowrap;
     }
 
-    .toggleButton {
-        margin-left: 7.4%;
+    .table-item, .answer {
+        font-size: 20px;
     }
 
+    h2 {
+        font-size: 35px;
+    }
 
-    .clearButton {
-        position: relative;
-        top: -29px;
-        margin-bottom: -29px;
-        margin-left: 54%;
+    .clicking {
+        font-size: 25px;
+        text-wrap: nowrap;
+    }
+
+    .colors p {
+        font-size: 25px;
     }
 
     button {
-        font-size: 18px;
-        font-weight: 650;
+        font-size: 25px;
     }
 
-    .clearButton {
-        position: relative;
-        margin-left: 13.8%;
-    }
-
-    .button-container {
-        margin-left: -7.2%;
-        display: flex;
-    }
-
-    .red,
-    .yellow,
-    .green {
-        margin-left: calc(-15% + 2px);
-        font-size: 20px;
-    }
-
-    .instructions {
-        font-family: 'Reddit Sans Condensed';
-        font-size: 20px;
-        margin-left: 15%;
-        white-space: nowrap;
-    }
-
-    .instructions h2 {
-        margin-bottom: -15px;
-        margin-left: -15%;
-    }
-
-    .instructions p.clicking {
-        margin-bottom: -10px;
-        margin-left: -15%;
+    button {
+        padding: 10px 5px 40px 5px;
+        text-wrap: nowrap;
     }
 
     #progressMessage {
-        margin-left: 2.5%;
+        font-size: 25px;
+    }
+
+    #percentage {
+        position: relative;
+        font-size: 25px;
+        top: -7.5px;
+        left: 5px;
     }
 
     #finished {
-        top: -39px;
-        left: 463px;
-    }
-
-    .progress-container {
-        margin-left: 2.5%;
-    }
-
-    table {
-        margin-bottom: 100px;
-        margin-top: 30px;
-        width: 100%;
-        margin-left: 2%;
-    }
-
-    .clicking.reveal {
-        margin-bottom: 10px;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 2360px) and (orientation: landscape) { /*iPads and tablets in landscape*/
-    h1 {
-        padding: 0;
-        white-space: nowrap;
-        width: 100%;
-    }
-
-    .toggleButton {
         position: relative;
-        border-radius: 8px;
+        font-size: 23px;
+        bottom: 109px;
+        left: 103px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1000px) { /*tablet in portrait*/
+    .table-item, .answer {
+        font-size: 25px;
     }
 
-    .clearButton button {
-        position: relative;
-        top: 20px;
-        margin-bottom: -29px;
-        left: -40px;
-        top: -0px;
+    h2 {
+        font-size: 40px;
+    }
+
+    .clicking {
+        font-size: 25px;
+    }
+
+    .colors p {
+        font-size: 25px;
     }
 
     button {
-        font-size: 18px;
-        font-weight: 650;
-    }
-
-    .button-container {
-        margin-left: -7.2%;
-    }
-
-    .red, .yellow, .green {
-        margin-left: calc(-15% + 2px);
         font-size: 20px;
+        padding: 5px 5px 30px 5px;
     }
+  }
 
-    .instructions {
-        font-family: 'Reddit Sans Condensed';
-        font-size: 20px;
-        margin-left: 15%;
-        white-space: nowrap;
-    }
-
-    .instructions h2 {
-        margin-bottom: -15px;
-        margin-left: -15%;
-    }
-
-    .instructions p.clicking {
-        margin-bottom: -10px;
-        margin-left: -15%;
-    }
-
-    #progressMessage {
-        margin-left: 2.5%;
-    }
-
-    #finished {
-        top: -39px;
-        left: 463px;
-    }
-
-    .progress-container {
-        margin-left: 2.5%;
-    }
-
-    table {
-        margin-bottom: 100px;
-        margin-top: 30px;
-        width: 100%;
-    }
-
-    .clicking.reveal {
-        margin-bottom: 10px;
-        margin-top: px;
-
-    }
-}
-
-@media (min-width: 768px) and (max-width: 2360px) { /*iPad and tablet in portrait*/
+@media (min-width: 1001px) and (max-width: 1600px) {
     h1 {
-        padding: 0;
-        white-space: nowrap;
-        width: 100%;
+        font-size: 50px;
     }
-    .instructions h2 {
-        margin-bottom: -15px;
-        margin-left: -100px;
+    
+    .table-item, .answer {
+        font-size: 30px;
     }
 
-    .instructions p.clicking {
-        margin-bottom: -10px;
-        margin-left: -100px;
+    h2 {
+        font-size: 40px;
     }
 
-    .toggleButton {
-        margin-left: 55px;
+    .clicking {
+        font-size: 25px;
     }
 
-    .clearButton {
-        position: relative;
-        right: 10px;
-        margin-bottom: -29px;
-        margin-left: 95px;
-        
+    .colors p {
+        font-size: 25px;
     }
 
     button {
-        font-size: 18px;
-        font-weight: 650;
-    }
-
-    .button-container {
-        margin-left: -7.2%;
-    }
-
-    .red, .yellow, .green {
-        margin-left: calc(-15% + 2px);
         font-size: 20px;
-    }
-
-    .instructions {
-        font-family: 'Reddit Sans Condensed';
-        font-size: 20px;
-        margin-left: 15%;
-        white-space: nowrap;
+        padding: 5px 5px 30px 5px;
     }
 
     #progressMessage {
-        margin-left: 2.5%;
+        font-size: 25px;
+        margin-left: 50px;
+    }
+
+    #percentage {
+        position: relative;
+        font-size: 25px;
+        bottom: 8px;
     }
 
     #finished {
-        top: -39px;
-        left: 463px;
+        position: relative;
+        font-size: 23px;
+        bottom: 109px;
+        left: 103px;
+    }
+
+    .aboveTable {
+        margin-left: 37px;
     }
 
     .progress-container {
-        margin-left: 2.5%;
+        margin-left: 50px;
     }
 
-    table {
-        margin-bottom: 100px;
-        margin-top: 30px;
-        width: 100%;
-    }
-
-    .clicking.reveal {
-        margin-bottom: 10px;
-    }
 }
+  
