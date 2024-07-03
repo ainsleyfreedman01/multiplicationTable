@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, intial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="multiply.png">
     <title>Let's Learn Multiplication!</title>
 </head>
@@ -16,23 +16,25 @@
     <div class="container">
 
         <h1>Let's Learn Multiplication!</h1>
-        <div class="instructions">
-            <h2><u>Instructions:</u></h2>
-            <p class="clicking reveal">Click the tile to reveal the answer.</p>
-            <p class="clicking changeColor">Click the tile to change the color based on how well you know it.</p>
-            <br>
-            <div class="colors">
-                <p class="red"><u><b>Red:</b></u> I don't know this.</p>
-                <p class="yellow"><u><b>Yellow:</b></u> I am familiar with this.</p>
-                <p class="green"><u><b>Green:</b></u> I know this!</p>
+        <div class="aboveTable">
+            <div class="instructions">
+                <h2><u>Instructions:</u></h2>
+                <p class="clicking reveal">Click the tile to reveal the answer.</p>
+                <p class="clicking changeColor">Click the tile to change the color based on how well you know it.</p>
+                <br>
+                <div class="colors">
+                    <p class="red"><u><b>Red:</b></u> I don't know this.</p>
+                    <p class="yellow"><u><b>Yellow:</b></u> I am familiar with this.</p>
+                    <p class="green"><u><b>Green:</b></u> I know this!</p>
+                </div>
             </div>
-        </div>
-        <div class="button-container">
-            <div class="toggleButton">
-                <button onclick="toggleFlipAnimation()" id="myButton">Change Color: On</button>
-            </div>
-            <div class="clearButton">
-                <button onclick="clearAll()">Clear All</button>
+            <div class="button-container">
+                <div class="toggleButton">
+                    <button onclick="toggleFlipAnimation()" id="myButton">Change Color: On</button>
+                </div>
+                <div class="clearButton">
+                    <button onclick="clearAll()">Clear All</button>
+                </div>
             </div>
         </div>
         <p class="instructions" id="progressMessage"><b><u>Progress:</u></b></p>

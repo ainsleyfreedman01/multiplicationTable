@@ -52,13 +52,8 @@ table {
     margin-left: 10px;
 }
 
-.clicking.reveal {
-    margin-bottom: -10px;
-    margin-top: 5px;
-}
-
-.clicking.changeColor {
-    margin-bottom: -10px;
+.clicking {
+    margin-bottom: -25px;
 }
 
 h1 {
@@ -130,9 +125,17 @@ button {
 
 .clearButton {
     position: relative;
-    top: -29px;
-    left: 150px;
-    margin-bottom: -29px;
+    left: -100px;
+    top: 50px;
+}
+
+.toggleButton {
+    padding-left: 5px;
+}
+
+.button-container {
+    display: flex;
+    margin-bottom: 50px;
 }
 
 .disable-hover tbody td:hover {
@@ -216,12 +219,12 @@ button {
     text-decoration: underline;
 }
 
-@media screen and (max-width: 467px) and (orientation: portrait){
+@media screen and (min-width: 320px) and (max-width: 480px) { /*portrait on phones*/
     h1 {
         padding: 0;
-        margin-left: 20%;
         white-space: nowrap;
         width: 100%;
+        margin-left: 15%;
 
     }
 
@@ -249,6 +252,7 @@ button {
 
     .button-container {
         margin-left: -13px;
+        display: flex;
     }
 
     .instructions {
@@ -291,7 +295,7 @@ button {
 
 }
 
-@media screen and (min-width: 467px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-width: 481px) and (max-width: 767px) { /*landscape on phones*/
     h1 {
         padding: 0;
         white-space: nowrap;
@@ -323,6 +327,7 @@ button {
 
     .button-container {
         margin-left: -7.2%;
+        display: flex;
     }
 
     .red,
@@ -363,9 +368,163 @@ button {
     }
 
     table {
-        margin-bottom: 150px;
+        margin-bottom: 100px;
         margin-top: 30px;
         width: 100%;
         margin-left: 2%;
+    }
+
+    .clicking.reveal {
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 2360px) and (orientation: landscape) { /*iPads and tablets in landscape*/
+    h1 {
+        padding: 0;
+        white-space: nowrap;
+        width: 100%;
+    }
+
+    .toggleButton {
+        position: relative;
+        border-radius: 8px;
+    }
+
+    .clearButton button {
+        position: relative;
+        top: 20px;
+        margin-bottom: -29px;
+        left: -40px;
+        top: -0px;
+    }
+
+    button {
+        font-size: 18px;
+        font-weight: 650;
+    }
+
+    .button-container {
+        margin-left: -7.2%;
+    }
+
+    .red, .yellow, .green {
+        margin-left: calc(-15% + 2px);
+        font-size: 20px;
+    }
+
+    .instructions {
+        font-family: 'Reddit Sans Condensed';
+        font-size: 20px;
+        margin-left: 15%;
+        white-space: nowrap;
+    }
+
+    .instructions h2 {
+        margin-bottom: -15px;
+        margin-left: -15%;
+    }
+
+    .instructions p.clicking {
+        margin-bottom: -10px;
+        margin-left: -15%;
+    }
+
+    #progressMessage {
+        margin-left: 2.5%;
+    }
+
+    #finished {
+        top: -39px;
+        left: 463px;
+    }
+
+    .progress-container {
+        margin-left: 2.5%;
+    }
+
+    table {
+        margin-bottom: 100px;
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .clicking.reveal {
+        margin-bottom: 10px;
+        margin-top: px;
+
+    }
+}
+
+@media (min-width: 768px) and (max-width: 2360px) { /*iPad and tablet in portrait*/
+    h1 {
+        padding: 0;
+        white-space: nowrap;
+        width: 100%;
+    }
+    .instructions h2 {
+        margin-bottom: -15px;
+        margin-left: -100px;
+    }
+
+    .instructions p.clicking {
+        margin-bottom: -10px;
+        margin-left: -100px;
+    }
+
+    .toggleButton {
+        margin-left: 55px;
+    }
+
+    .clearButton {
+        position: relative;
+        right: 10px;
+        margin-bottom: -29px;
+        margin-left: 95px;
+        
+    }
+
+    button {
+        font-size: 18px;
+        font-weight: 650;
+    }
+
+    .button-container {
+        margin-left: -7.2%;
+    }
+
+    .red, .yellow, .green {
+        margin-left: calc(-15% + 2px);
+        font-size: 20px;
+    }
+
+    .instructions {
+        font-family: 'Reddit Sans Condensed';
+        font-size: 20px;
+        margin-left: 15%;
+        white-space: nowrap;
+    }
+
+    #progressMessage {
+        margin-left: 2.5%;
+    }
+
+    #finished {
+        top: -39px;
+        left: 463px;
+    }
+
+    .progress-container {
+        margin-left: 2.5%;
+    }
+
+    table {
+        margin-bottom: 100px;
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .clicking.reveal {
+        margin-bottom: 10px;
     }
 }
