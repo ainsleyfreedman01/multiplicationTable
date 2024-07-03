@@ -209,39 +209,37 @@ button {
 
 #finished {
     font-family: 'Inter';
-    font-size: 18px;
+    font-size: 23px;
     font-weight: 700;
     position: relative;
     z-index: 1000;
-    bottom: 38px;
-    left: 474px;
     white-space: nowrap;
     color: green;
     text-decoration: underline;
 }
 
-@media (min-width: 481px) and (max-width: 767px) { /*phones in landscape*/
-    .aboveTable, .progress-container, #progressMessage {
+@media (min-width: 481px) and (max-width: 767px) {
+
+    /*phones in landscape*/
+    .aboveTable,
+    .progress-container,
+    #progressMessage {
         margin-left: 5px;
     }
 
-    .table-item, .answer {
+    .table-item,
+    .answer {
         font-size: 20px;
     }
 
     h1 {
         margin-left: 30px;
     }
+}
 
-    #finished {
-        position: relative;
-        left: 105px;
-        bottom: 88px;
-        font-size: 20px;
-    }
-  }
+@media (min-width: 320px) and (max-width: 480px) {
 
-  @media (min-width: 320px) and (max-width: 480px) { /*phones in portrait*/
+    /*phones in portrait*/
     table {
         margin-left: -6.7px;
     }
@@ -252,7 +250,8 @@ button {
         font-size: 45px;
     }
 
-    .table-item, .answer {
+    .table-item,
+    .answer {
         font-size: 20px;
     }
 
@@ -289,88 +288,79 @@ button {
         left: 5px;
     }
 
-    #finished {
-        position: relative;
-        font-size: 23px;
-        bottom: 109px;
-        left: 103px;
-    }
-  }
 
-  @media (min-width: 768px) and (max-width: 1000px) { /*tablet in portrait*/
-    .table-item, .answer {
-        font-size: 25px;
-    }
+    @media (min-width: 768px) and (max-width: 1000px) {
 
-    h2 {
-        font-size: 40px;
-    }
+        /*tablet in portrait*/
+        .table-item,
+        .answer {
+            font-size: 25px;
+        }
 
-    .clicking {
-        font-size: 25px;
-    }
+        h2 {
+            font-size: 40px;
+        }
 
-    .colors p {
-        font-size: 25px;
-    }
+        .clicking {
+            font-size: 25px;
+        }
 
-    button {
-        font-size: 20px;
-        padding: 5px 5px 30px 5px;
-    }
-  }
+        .colors p {
+            font-size: 25px;
+        }
 
-@media (min-width: 1001px) and (max-width: 1600px) {
-    h1 {
-        font-size: 50px;
-    }
-    
-    .table-item, .answer {
-        font-size: 30px;
+        button {
+            font-size: 20px;
+            padding: 5px 5px 30px 5px;
+        }
     }
 
-    h2 {
-        font-size: 40px;
-    }
+    @media (min-width: 1001px) and (max-width: 1600px) {
+        h1 {
+            font-size: 50px;
+        }
 
-    .clicking {
-        font-size: 25px;
-    }
+        .table-item,
+        .answer {
+            font-size: 30px;
+        }
 
-    .colors p {
-        font-size: 25px;
-    }
+        h2 {
+            font-size: 40px;
+        }
 
-    button {
-        font-size: 20px;
-        padding: 5px 5px 30px 5px;
-    }
+        .clicking {
+            font-size: 25px;
+        }
 
-    #progressMessage {
-        font-size: 25px;
-        margin-left: 50px;
-    }
+        .colors p {
+            font-size: 25px;
+        }
 
-    #percentage {
-        position: relative;
-        font-size: 25px;
-        bottom: 8px;
-    }
+        button {
+            font-size: 20px;
+            padding: 5px 5px 30px 5px;
+        }
 
-    #finished {
-        position: relative;
-        font-size: 23px;
-        bottom: 109px;
-        left: 103px;
-    }
+        #progressMessage {
+            font-size: 25px;
+            margin-left: 50px;
+        }
 
-    .aboveTable {
-        margin-left: 37px;
-    }
+        #percentage {
+            position: relative;
+            font-size: 25px;
+            bottom: 8px;
+        }
 
-    .progress-container {
-        margin-left: 50px;
+        .aboveTable {
+            margin-left: 37px;
+        }
+
+        .progress-container {
+            margin-left: 50px;
+        }
+
     }
 
 }
-  
