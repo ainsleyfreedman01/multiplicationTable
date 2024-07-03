@@ -232,6 +232,13 @@ button {
     h1 {
         margin-left: 30px;
     }
+
+    #finished {
+        position: relative;
+        left: 105px;
+        bottom: 88px;
+        font-size: 20px;
+    }
   }
 
   @media (min-width: 320px) and (max-width: 480px) { /*phones in portrait*/
@@ -240,8 +247,9 @@ button {
     }
 
     h1 {
-        margin-left: 90px;
+        margin-left: 12.5%;
         text-wrap: nowrap;
+        font-size: 45px;
     }
 
     .table-item, .answer {
