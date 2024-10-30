@@ -1,6 +1,6 @@
 Multiplication Table
 ====================
-This interactive multiplication table is perfect for helping younger students learn and remember their multiplication facts.
+This interactive multiplication table is perfect for helping younger students learn and remember their multiplication facts. The clean yet simple design allows for it to be used by learners of all ages.
 
 Here is how to use it:
 ----------------------
